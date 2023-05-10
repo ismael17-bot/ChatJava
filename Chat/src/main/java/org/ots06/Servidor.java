@@ -30,7 +30,7 @@ public class Servidor {
         while(true){
             try {
                 Socket clientSocket = serverSocket.accept();
-                System.out.println("Cliente: "+clientSocket.getRemoteSocketAddress()+" se conectou");
+                System.out.println("Novo Cliente: "+clientSocket.getRemoteSocketAddress()+" se conectou");
                 this.in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
                 String msg = in.readLine();
                 System.out.println(
