@@ -2,10 +2,14 @@ package org.ots06;
 
 import java.io.*;
 import java.net.Socket;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class ControlerCliente implements Runnable {
     public static ArrayList<ControlerCliente> clientes = new ArrayList<>();
+
+    private static final String LOG_FILE = "log.txt";
     private Socket socket;
     private BufferedReader bufferedReader;
     private BufferedWriter bufferedWriter;
@@ -47,6 +51,10 @@ public class ControlerCliente implements Runnable {
         for (ControlerCliente controlerCliente : clientes){
             try{
                 if(!controlerCliente.nomeCliente.equals(nomeCliente)){
+                    if (mensagemEnviar.equals("!sair")){
+                        System.out.println("nome "+nomeCliente+" saiu");
+                        finalizaAll(socket, bufferedReader, bufferedWriter);
+                    }
                     controlerCliente.bufferedWriter.write(mensagemEnviar);
                     controlerCliente.bufferedWriter.newLine();
                     controlerCliente.bufferedWriter.flush();
@@ -70,14 +78,28 @@ public class ControlerCliente implements Runnable {
                 socket.close();
             }
         } catch (IOException e) {
-            System.out.println("Erro ao encerrar "+e.getMessage());
+            //fazer algo dps
         }
     }
 
     public void removeCliente() {
+
+        Date date = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        String logMessage = "Nome do cliente: "+ nomeCliente + socket.getInetAddress() + " desconectou " + dateFormat.format(date);
+        System.out.println(logMessage);
+        writeLog(LOG_FILE, logMessage);
         clientes.remove(this);
         broadcastMenssagem("SERVIDOR: "+ nomeCliente +" desconectou-se");
     }
 
-
+    private static void writeLog(String logFile, String logMessage) {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(logFile, true));
+            writer.write(logMessage + "\n");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

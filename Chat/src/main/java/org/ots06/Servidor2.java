@@ -14,9 +14,10 @@ public class Servidor2 {
 
     public void startServidor(){
         try{
+            System.out.println("Servido ON");
             while (!servidorSocket.isClosed()){
                 Socket socket = servidorSocket.accept();
-                System.out.println("Novo cliente conectado");
+                System.out.println("Novo cliente conectado "+socket.getRemoteSocketAddress());
                 ControlerCliente controlerCliente = new ControlerCliente(socket);
 
                 Thread thread = new Thread(controlerCliente);
