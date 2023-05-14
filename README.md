@@ -1,63 +1,63 @@
-# Aplicação de Chat em Java
+# Java Chat Application
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-Este é um aplicativo de chat em Java que permite aos usuários se comunicarem em tempo real.
+This is a Java chat application that allows users to communicate with each other in real-time.
 
-## Instalação
+## Installation
 
-1. Clone o repositório:
+1. Clone the repository:
 
    ```shell
    git clone https://github.com/ismael17-bot/ChatJava.git
    ```
 
-2. Abra o projeto em seu IDE Java preferido (recomendamos o NetBeans).
+2. Open the project in your preferred Java IDE. We recommend using NetBeans.
 
-3. Construa o projeto e execute a aplicação.
+3. Build the project and run the application.
 
-## Uso
+## Usage
 
-1. Inicie o servidor executando o arquivo `Servidor.java`.
+1. Start the server by running the `Servidor.java` file.
 
-2. Inicie o cliente executando o arquivo `Cliente.java`.
+2. Start the client by running the `Cliente.java` file.
 
-3. Verifique se a conexão foi estabelecida com sucesso.
+3. Check if the connection was established successfully.
 
-4. Comece a conversar com outros usuários!
+4. Start chatting with other users!
 
-## Recursos
+## Features
 
-- Mensagens em tempo real entre múltiplos usuários.
+- Real-time messaging between multiple users.
 
-## Contribuindo
+## Contributing
 
-Contribuições são bem-vindas! Siga as etapas abaixo:
+Contributions are welcome! Follow the steps below:
 
-1. Faça um fork do repositório.
+1. Fork the repository.
 
-2. Crie um branch para a sua contribuição:
-
-   ```shell
-   git checkout -b minha-contribuicao
-   ```
-
-3. Faça as alterações desejadas.
-
-4. Commit suas alterações:
+2. Create a branch for your contribution:
 
    ```shell
-   git commit -m "Minha contribuição"
+   git checkout -b my-contribution
    ```
 
-5. Envie suas alterações para o repositório remoto:
+3. Make the desired changes.
+
+4. Commit your changes:
 
    ```shell
-   git push origin minha-contribuicao
+   git commit -m "My contribution"
    ```
 
-6. Abra um pull request no repositório original.
+5. Push your changes to the remote repository:
 
-## Licença
+   ```shell
+   git push origin my-contribution
+   ```
 
-Este projeto é licenciado sob a Licença MIT. Consulte o arquivo [LICENSE](LICENSE) para obter mais detalhes.
+6. Open a pull request in the original repository.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
