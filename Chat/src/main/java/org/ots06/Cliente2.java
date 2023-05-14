@@ -38,6 +38,7 @@ public class Cliente2 {
                 bufferedWriter.newLine();
                 bufferedWriter.flush();
             }
+            socket.close();
         } catch (IOException e) {
             finalizaAll(socket, bufferedReader, bufferedWriter);
         }
