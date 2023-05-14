@@ -18,9 +18,9 @@ This is a Java chat application that allows users to communicate with each other
 
 ## Usage
 
-1. Start the server by running the `Servidor.java` file.
+1. Start the server by running the `Servidor2.java` file.
 
-2. Start the client by running the `Cliente.java` file.
+2. Start the client by running the `Cliente2.java` file.
 
 3. Check if the connection was established successfully.
 
@@ -60,4 +60,4 @@ Contributions are welcome! Follow the steps below:
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+This is a public project made by UDESC studends. 
