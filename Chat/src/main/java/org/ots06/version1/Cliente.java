@@ -1,4 +1,4 @@
-package org.ots06;
+package org.ots06.version1;
 
 import java.io.*;
 import java.net.Socket;
@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class Cliente {
     private final String SERVER_ADDRESS="127.0.0.1";
+    private final int SERVER_PORT = 4001;
     private Socket clienteSocket;
     private Scanner scanner;
     private BufferedWriter out;
@@ -13,6 +14,7 @@ public class Cliente {
     public Cliente(){
         scanner = new Scanner(System.in);
     }
+
     public static void main(String[] args){
         Cliente cliente = new Cliente();
         cliente.start();
@@ -20,8 +22,8 @@ public class Cliente {
 
     public void start(){
         try {
-            clienteSocket = new Socket(SERVER_ADDRESS, Servidor.PORT);
-            System.out.println("Conectado no servidor "+SERVER_ADDRESS+" Porta: "+Servidor.PORT);
+            clienteSocket = new Socket(SERVER_ADDRESS, SERVER_PORT);
+            System.out.println("Conectado no servidor "+SERVER_ADDRESS+" Porta: "+SERVER_PORT);
             this.out = new BufferedWriter(new OutputStreamWriter(clienteSocket.getOutputStream()));
 
             messageLoop();
@@ -40,6 +42,7 @@ public class Cliente {
             out.newLine();
             out.flush();
         } while (!msg.equalsIgnoreCase("!sair"));
-    }
 
+        clienteSocket.close();
+    }
 }

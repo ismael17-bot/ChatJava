@@ -1,0 +1,5 @@
+/127.0.0.1 connected at 2023/05/14 00:42:32
+Nome do cliente: opa/127.0.0.1 desconectou 2023/05/14 00:54:31
+Nome do cliente: ha/127.0.0.1 desconectou 2023/05/14 00:55:29
+Nome do cliente: opa/127.0.0.1 desconectou 2023/05/14 15:23:02
+Nome do cliente: novo/127.0.0.1 desconectou 2023/05/14 15:23:31
