@@ -35,11 +35,12 @@ public class ControlerCliente implements Runnable {
         while (socket.isConnected()) {
             try {
                 mensagemCliente = bufferedReader.readLine();
-                broadcastMenssagem(mensagemCliente);
-                if (mensagemCliente.contentEquals("!sair")) {
+
+                if (mensagemCliente == null || mensagemCliente.isEmpty() || mensagemCliente.equals("!sair") ){
                     finalizaAll(socket, bufferedReader, bufferedWriter);
                     break;
                 }
+                broadcastMenssagem(mensagemCliente);
             } catch (IOException e) {
                 finalizaAll(socket, bufferedReader, bufferedWriter);
                 break;
@@ -51,7 +52,7 @@ public class ControlerCliente implements Runnable {
         for (ControlerCliente controlerCliente : clientes){
             try{
                 if(!controlerCliente.nomeCliente.equals(nomeCliente)){
-                    if (mensagemEnviar.equals("!sair")){
+                    if (mensagemEnviar.isEmpty() || mensagemEnviar == null || mensagemEnviar.equals("!sair") ){
                         System.out.println("nome "+nomeCliente+" saiu");
                         finalizaAll(socket, bufferedReader, bufferedWriter);
                     }

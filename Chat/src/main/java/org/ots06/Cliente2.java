@@ -29,8 +29,11 @@ public class Cliente2 {
             bufferedWriter.flush();
 
             Scanner scanner = new Scanner(System.in);
-            while(socket.isConnected()){
+            while(true){
                 String mensagemEnviar = scanner.nextLine();
+                if (mensagemEnviar.equals("!sair")) {
+                    break;
+                }
                 bufferedWriter.write(nomeCliente + ": " + mensagemEnviar);
                 bufferedWriter.newLine();
                 bufferedWriter.flush();
